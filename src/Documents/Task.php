@@ -2,9 +2,7 @@
 
 namespace Documents;
 
-//use Catalogs\Organization, Catalogs\Worker;
-
-class Task extends AbstractDocument
+class Task extends AbstractDocument implements DocumentInterface
 {
 
     protected $description;
@@ -14,6 +12,36 @@ class Task extends AbstractDocument
     protected $processing;
 
     protected $completion;
+
+    public function __construct($documentNumber, $documentDate, $contractor, $description)
+    {
+        $this->action = false;
+        $this->removed = false;
+        $this->documentNumber = $documentNumber;
+        $this->documentDate = $documentDate;
+        $this->description = $description;
+        $this->status = 'new';
+        $this->description = null;
+        $this->completion = null;
+        $this->contractor = $contractor;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDocumentNumber()
+    {
+        return $this->documentNumber;
+    }
+
+    /**
+     * @param mixed $documentNumber
+     */
+    public function setDocumentNumber($documentNumber)
+    {
+        $this->documentNumber = $documentNumber;
+    }
+
 
     /**
      * @return mixed
@@ -34,33 +62,41 @@ class Task extends AbstractDocument
     /**
      * @return mixed
      */
-    public function getStatus()
+    public function getDocumentDate()
     {
-        return $this->status;
+        return $this->documentDate;
     }
 
     /**
-     * @param mixed $status
+     * @param mixed $documentDate
      */
-    public function setStatus($status)
+    public function setDocumentDate($documentDate)
     {
-        $this->status = $status;
+        $this->documentDate = $documentDate;
     }
 
     /**
      * @return mixed
      */
-    public function getProcessing()
+    public function getRemoved()
     {
-        return $this->processing;
+        return $this->removed;
     }
 
     /**
-     * @param mixed $processing
+     * @return mixed
      */
-    public function setProcessing($processing)
+    public function getAction()
     {
-        $this->processing = $processing;
+        return $this->action;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getStatus()
+    {
+        return $this->status;
     }
 
     /**
@@ -72,11 +108,11 @@ class Task extends AbstractDocument
     }
 
     /**
-     * @param mixed $completion
+     * @return mixed
      */
-    public function setCompletion($completion)
+    public function getProcessing()
     {
-        $this->completion = $completion;
+        return $this->processing;
     }
 
 }

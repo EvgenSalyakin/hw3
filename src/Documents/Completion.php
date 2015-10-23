@@ -2,9 +2,8 @@
 
 namespace Documents;
 
-//use Catalogs\Organization, Catalogs\Worker;
 
-class Task extends AbstractDocument
+class Task extends AbstractDocument implements DocumentInterface
 {
     protected $task;
 

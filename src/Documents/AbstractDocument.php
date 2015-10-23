@@ -2,97 +2,32 @@
 
 namespace Documents;
 
-abstract class AbstractDocument
+abstract class AbstractDocument implements DocumentInterface
 {
 
     protected $UID;
 
-    protected $docementNumber;
+    protected $documentNumber;
     
     protected $documentDate;
 
     protected $removed;
 
-    protected $held;
+    protected $action;
 
-    /**
-     * @return mixed
-     */
-    public function getUID()
+    public function action()
     {
-        return $this->UID;
+        $this->action = !$this->action;
+
+        return $this->action;
     }
 
-    /**
-     * @param mixed $UID
-     */
-    protected function setUID($UID)
+    public function remove()
     {
-        $this->UID = $UID;
-    }
+        $this->removed = !$this->removed;
+        $this->action = false;
 
-    /**
-     * @return mixed
-     */
-    public function getDocementNumber()
-    {
-        return $this->docementNumber;
-    }
-
-    /**
-     * @param mixed $docementNumber
-     */
-    public function setDocementNumber($docementNumber)
-    {
-        $this->docementNumber = $docementNumber;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getDocumentDate()
-    {
-        return $this->documentDate;
-    }
-
-    /**
-     * @param mixed $documentDate
-     */
-    public function setDocumentDate($documentDate)
-    {
-        $this->documentDate = $documentDate;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getRemoved()
-    {
         return $this->removed;
-    }
-
-    /**
-     * @param mixed $removed
-     */
-    public function setRemoved($removed)
-    {
-        $this->removed = $removed;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getHeld()
-    {
-        return $this->held;
-    }
-
-    /**
-     * @param mixed $held
-     */
-    public function setHeld($held)
-    {
-        $this->held = $held;
     }
 
 }
