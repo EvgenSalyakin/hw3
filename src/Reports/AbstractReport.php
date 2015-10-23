@@ -18,9 +18,9 @@ abstract class AbstractReport
     }
 
     /**
-     * @param mixed $firstName
+     * @param mixed $UID
      */
-    protected function setUID($UID)
+    public function setUID($UID)
     {
         $this->UID = $UID;
     }
@@ -28,27 +28,17 @@ abstract class AbstractReport
     /**
      * @return mixed
      */
-    public function getValue()
+    public function getName()
     {
-        return $this->value;
+        return $this->name;
     }
 
     /**
-     * @param mixed $lastName
+     * @param mixed $name
      */
-    public function setValue($value)
+    public function setName($name)
     {
-        $this->value = $value;
-    }
-
-    public function __set($property, $value)
-    {
-        $this->$property = $value;
-    }
-
-    public function __get($property)
-    {
-        return $this->$property;
+        $this->name = $name;
     }
 
 }

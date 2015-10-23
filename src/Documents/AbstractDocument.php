@@ -7,9 +7,13 @@ abstract class AbstractDocument
 
     protected $UID;
 
-    protected $number;
+    protected $docementNumber;
     
-    protected $dateTime;
+    protected $documentDate;
+
+    protected $removed;
+
+    protected $held;
 
     /**
      * @return mixed
@@ -30,34 +34,65 @@ abstract class AbstractDocument
     /**
      * @return mixed
      */
-    public function getNumber()
+    public function getDocementNumber()
     {
-        return $this->number;
+        return $this->docementNumber;
     }
 
     /**
-     * @param mixed $number
+     * @param mixed $docementNumber
      */
-    public function setNumber($number)
+    public function setDocementNumber($docementNumber)
     {
-        $this->number = $number;
+        $this->docementNumber = $docementNumber;
     }
 
     /**
      * @return mixed
      */
-    public function getDateTime()
+    public function getDocumentDate()
     {
-        return $this->dateTime;
+        return $this->documentDate;
     }
 
     /**
-     * @param mixed $dateTime
+     * @param mixed $documentDate
      */
-    public function setDateTime($dateTime)
+    public function setDocumentDate($documentDate)
     {
-        $this->dateTime = $dateTime;
+        $this->documentDate = $documentDate;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getRemoved()
+    {
+        return $this->removed;
+    }
+
+    /**
+     * @param mixed $removed
+     */
+    public function setRemoved($removed)
+    {
+        $this->removed = $removed;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getHeld()
+    {
+        return $this->held;
+    }
+
+    /**
+     * @param mixed $held
+     */
+    public function setHeld($held)
+    {
+        $this->held = $held;
+    }
 
 }
