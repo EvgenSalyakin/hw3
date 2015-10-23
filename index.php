@@ -3,7 +3,7 @@
 require_once 'vendor/autoload.php';
 
 use Catalogs\Organization, Catalogs\Worker;
-use Documents\Task;
+use Documents\Task, Documents\Processing, Documents\Completion;
 //use Reports\..;
 
 {
@@ -46,14 +46,19 @@ use Documents\Task;
         echo '<br>';
     }
 
-    $docement1=new Task(1,date("m.d.y"),$contractor,'Home work 2. Create OOP project.');
-    //$docement1=new Task('1');//,'23/10/15','contractor','Home work 2. Create OOP project.');
-   // $docement1->action();
-    //$docement1=new Task();
-    //$docement1->setDocementNumber(1);
+    $document1=new Task(1,date("m.d.y"),$contractor,'Home work 2. Create OOP project.');
+    $document2=new Processing(1,date("m.d.y"),$docement1,$worker1,500,'Project managment');
+    $document3=new Processing(2,date("m.d.y"),$docement1,$worker2,2000,'Develop');
+    $document4=new Processing(2,date("m.d.y"),$docement1,$worker3,500,'Testing');
+    $document5=new Completion(1,date("m.d.y"),$docement1,'success','Success finish');
+
+    $documents = [$document1, $document2, $document3, $document4, $document5];
 
     echo '<br><br>';
     echo 'Documents:<br>';
-    echo '    N'.$docement1->getDocumentNumber().' dated '.$docement1->getDocumentDate();
+    foreach ($documents as $document) {
+        echo '    '.$document->getDocumentType().' N'.$document->getDocumentNumber().' dated '.$document->getDocumentDate();
+        echo '<br>';
+    }
     echo '<br>';
 }

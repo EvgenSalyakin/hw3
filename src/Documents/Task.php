@@ -21,29 +21,14 @@ class Task extends AbstractDocument implements DocumentInterface
         $this->documentDate = $documentDate;
         $this->description = $description;
         $this->status = 'new';
-        $this->description = null;
+        $this->description = $description;
         $this->completion = null;
+        $this->processing = null;
         $this->contractor = $contractor;
+        $this->documentType = 'Task';
     }
 
-    /**
-     * @return mixed
-     */
-    public function getDocumentNumber()
-    {
-        return $this->documentNumber;
-    }
-
-    /**
-     * @param mixed $documentNumber
-     */
-    public function setDocumentNumber($documentNumber)
-    {
-        $this->documentNumber = $documentNumber;
-    }
-
-
-    /**
+     /**
      * @return mixed
      */
     public function getDescription()
@@ -59,23 +44,7 @@ class Task extends AbstractDocument implements DocumentInterface
         $this->description = $description;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getDocumentDate()
-    {
-        return $this->documentDate;
-    }
-
-    /**
-     * @param mixed $documentDate
-     */
-    public function setDocumentDate($documentDate)
-    {
-        $this->documentDate = $documentDate;
-    }
-
-    /**
+     /**
      * @return mixed
      */
     public function getRemoved()

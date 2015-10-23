@@ -15,6 +15,8 @@ abstract class AbstractDocument implements DocumentInterface
 
     protected $action;
 
+    protected $documentType;
+
     public function action()
     {
         $this->action = !$this->action;
@@ -28,6 +30,54 @@ abstract class AbstractDocument implements DocumentInterface
         $this->action = false;
 
         return $this->removed;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDocumentNumber()
+    {
+        return $this->documentNumber;
+    }
+
+    /**
+     * @param mixed $documentNumber
+     */
+    public function setDocumentNumber($documentNumber)
+    {
+        $this->documentNumber = $documentNumber;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDocumentDate()
+    {
+        return $this->documentDate;
+    }
+
+    /**
+     * @param mixed $documentDate
+     */
+    public function setDocumentDate($documentDate)
+    {
+        $this->documentDate = $documentDate;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDocumentType()
+    {
+        return $this->documentType;
+    }
+
+    /**
+     * @param mixed $documentType
+     */
+    public function setDocumentType($documentType)
+    {
+        $this->documentType = $documentType;
     }
 
 }

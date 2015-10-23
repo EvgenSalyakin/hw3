@@ -12,22 +12,6 @@ abstract class AbstractReport
     /**
      * @return mixed
      */
-    public function getUID()
-    {
-        return $this->UID;
-    }
-
-    /**
-     * @param mixed $UID
-     */
-    public function setUID($UID)
-    {
-        $this->UID = $UID;
-    }
-
-    /**
-     * @return mixed
-     */
     public function getName()
     {
         return $this->name;

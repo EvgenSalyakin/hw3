@@ -11,7 +11,19 @@ class Completion extends AbstractDocument implements DocumentInterface
 
     protected $status;
 
-    /**
+    public function __construct($documentNumber, $documentDate, $task, $status, $description)
+    {
+        $this->action = false;
+        $this->removed = false;
+        $this->documentNumber = $documentNumber;
+        $this->documentDate = $documentDate;
+        $this->description = $description;
+        $this->task = $task;
+        $this->status = $status;
+        $this->documentType = 'Completion';
+     }
+
+      /**
      * @return mixed
      */
     public function getTask()

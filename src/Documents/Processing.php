@@ -13,7 +13,21 @@ class Processing extends AbstractDocument implements DocumentInterface
 
     protected $price;
 
-    /**
+    public function __construct($documentNumber, $documentDate, $task, $executor, $price, $description)
+    {
+        $this->action = false;
+        $this->removed = false;
+        $this->documentNumber = $documentNumber;
+        $this->documentDate = $documentDate;
+        $this->description = $description;
+        $this->task = $task;
+        $this->executor = $executor;
+        $this->price = $price;
+        $this->documentType = 'Processing';
+
+    }
+
+     /**
      * @return mixed
      */
     public function getTask()
