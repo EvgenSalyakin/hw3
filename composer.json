@@ -10,13 +10,9 @@
         "psr-4": {
             "Documents\\": "src/Documents",
             "Catalogs\\": "src/Catalogs",
-            "Constants\\": "src/Constants",
-            "Enumerations\\": "src/Enumerations",
-            "Reports\\": "src/Reports",
-            "InformationRegisters\\": "src/InformationRegisters",
-            "CalculationRegisters\\": "src/CalculationRegisters",
+            "Reports\\": "src/Reports"
         }
-    },
+    }
     "require": {
          "php":">=5.5.0"
     }
