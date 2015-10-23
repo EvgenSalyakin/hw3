@@ -13,6 +13,8 @@ class Processing extends AbstractDocument implements DocumentInterface
 
     protected $price;
 
+    protected $processing;
+
     public function __construct($documentNumber, $documentDate, $task, $executor, $price, $description)
     {
         $this->action = false;
@@ -24,10 +26,39 @@ class Processing extends AbstractDocument implements DocumentInterface
         $this->executor = $executor;
         $this->price = $price;
         $this->documentType = 'Processing';
-
+        $this->processing = null;
     }
 
-     /**
+    /**
+     * @return null
+     */
+    public function getProcessing()
+    {
+        return $this->processing;
+    }
+
+    /**
+     * @param null $processing
+     */
+    public function setProcessing($processing)
+    {
+        $this->processing = $processing;
+    }
+
+    public function action()
+    {
+        if ($this->task <> null) {
+            if ($this->task->getDocumentType() == 'Task') {
+                if ($this->task->getProcessing() <> null) {
+                    $this->setProcessing($this->task->getProcessing());
+                }
+                $this->task->setProcessing($this);
+            }
+        }
+        return parent::action();
+    }
+
+    /**
      * @return mixed
      */
     public function getTask()

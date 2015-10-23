@@ -20,7 +20,6 @@ abstract class AbstractDocument implements DocumentInterface
     public function action()
     {
         $this->action = !$this->action;
-
         return $this->action;
     }
 
@@ -30,6 +29,11 @@ abstract class AbstractDocument implements DocumentInterface
         $this->action = false;
 
         return $this->removed;
+    }
+
+    function __toString()
+    {
+        return $this->getDocumentType().' N'.$this->getDocumentNumber().' dated '.$this->getDocumentDate();
     }
 
     /**

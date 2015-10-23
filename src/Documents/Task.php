@@ -84,4 +84,20 @@ class Task extends AbstractDocument implements DocumentInterface
         return $this->processing;
     }
 
+    /**
+     * @param null $processing
+     */
+    public function setProcessing($processing)
+    {
+        $this->processing = $processing;
+    }
+
+    /**
+     * @param null $completion
+     */
+    public function setCompletion($completion)
+    {
+        $this->completion = $completion;
+    }
+
 }
