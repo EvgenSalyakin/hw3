@@ -3,7 +3,7 @@
 namespace Documents;
 
 
-class Task extends AbstractDocument implements DocumentInterface
+class Completion extends AbstractDocument implements DocumentInterface
 {
     protected $task;
 
