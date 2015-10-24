@@ -8,7 +8,7 @@ use Reports\ExecutorsOfTask;
 
 {
     $contractor = new Organization();
-    $contractor->setName('GeetHub');
+    $contractor->setName('GeekHub');
     $contractor->setAddress('Cherkassy ...');
     $contractor->setRegistrationCode('12345678');
     $contractor->setCode(1);
