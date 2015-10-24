@@ -21,9 +21,19 @@ class Completion extends AbstractDocument implements DocumentInterface
         $this->task = $task;
         $this->status = $status;
         $this->documentType = 'Completion';
-     }
+    }
 
-      /**
+    public function action()
+    {
+        if ($this->task <> null) {
+            if ($this->task->getDocumentType() == 'Task') {
+                $this->task->setCompletion($this);
+            }
+        }
+        return parent::action();
+    }
+
+    /**
      * @return mixed
      */
     public function getTask()
